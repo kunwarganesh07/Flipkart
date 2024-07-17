@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipKart</title>
+    <link rel="icon" type="image/x-icon"
+        href=https://imgs.search.brave.com/egWAHHwjNHGtOuD-1GpUprjPSwRJwu9KZ4D2pRWn9oI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dC5icmFuZGZldGNo/LmlvL2lkV2RJbU5T/VXQvaWRrcWd0VVRQ/eC5zdmc_dXBkYXRl/ZD0xNjY4NTE2NTU3/OTU3>
+    <link rel="stylesheet" href="filpkart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        
+    </style>
+</head>
+
+
+<body>
+    <!-- navigation bar -->
+    <div class="row mt-3 d-flex   NAV" style="height: 70px; ">
+        <div class="col-md-2 text-center mt-3">
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
+                width="160" height="40" title="Flipkart">
+        </div>
+        <div class="col-md-6 mt-3">
+            <input type="text" class="form-control w-100" placeholder=" Search for Products, Brands and More">
+        </div>
+
+        <div class="col-md-4 d-flex gap-4 mt-3">
+            <div>
+                <button class="btn btn-outline-light btn-block dropdown-toggle Account-button" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false"
+                    style="border: 0px; color: black; width: 100%; text-align: left;"><img
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+                        alt="Account" class="-dOa_b L_FVxe" width="25" height="25">
+                    </svg></i>
+                    <span class="dropdown">
+                        Account
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+                                            alt="Account" class="-dOa_b L_FVxe" width="25" height="25">
+                                        </svg>
+                                        </i><span class="ms-2">My Profile</span>
+                                    </div>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/supercoin-ce8408.svg"
+                                            alt="SuperCoin Zone" width="24" height="24">
+                                        </i><span class="ms-2">SuperCoin Zone</span>
+                                    </div>
+                                </a>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkplus-4ff29a.svg"
+                                            alt="Flipkart Plus Zone" width="24" height="24">
+                                        </i><span class="ms-2">FlipKart Plus Zone</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/orders-bfe8c4.svg"
+                                            alt="Orders" width="24" height="24">
+                                        </i><span class="ms-2">Order</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIwLjI0OUMxMiAyMC4yNDkgMi42MjUgMTQuOTk5IDIuNjI1IDguNjI0MDNDMi42MjUgNy40OTcwNSAzLjAxNTQ2IDYuNDA0ODggMy43Mjk5NiA1LjUzMzM0QzQuNDQ0NDUgNC42NjE3OSA1LjQzODg0IDQuMDY0NzIgNi41NDM5MyAzLjg0MzdDNy42NDkwMyAzLjYyMjY4IDguNzk2NTcgMy43OTEzNyA5Ljc5MTMxIDQuMzIxMDZDMTAuNzg2MSA0Ljg1MDc2IDExLjU2NjUgNS43MDg3NCAxMiA2Ljc0OTAzVjYuNzQ5MDNDMTIuNDMzNSA1LjcwODc0IDEzLjIxMzkgNC44NTA3NiAxNC4yMDg3IDQuMzIxMDZDMTUuMjAzNCAzLjc5MTM3IDE2LjM1MSAzLjYyMjY4IDE3LjQ1NjEgMy44NDM3QzE4LjU2MTIgNC4wNjQ3MiAxOS41NTU1IDQuNjYxNzkgMjAuMjcgNS41MzMzNEMyMC45ODQ1IDYuNDA0ODggMjEuMzc1IDcuNDk3MDUgMjEuMzc1IDguNjI0MDNDMjEuMzc1IDE0Ljk5OSAxMiAyMC4yNDkgMTIgMjAuMjQ5WiIgc3Ryb2tlPSIjMjEyMTIxIiBzdHJva2Utd2lkdGg9IjEuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="
+                                            alt="Wishlist (9)" width="24" height="24">
+                                        </i><span class="ms-2">Wishlist(9)</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/coupons-083172.svg"
+                                            alt="Coupons" width="24" height="24">
+                                        </i><span class="ms-2">Coupons</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/giftCard-bd87e1.svg"
+                                            alt="Gift Cards" width="24" height="24">
+                                        </i><span class="ms-2">Gift Cards</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/notificationPreferences-cfffaf.svg"
+                                            alt="Notifications" width="24" height="24">
+                                        </i><span class="ms-2">Notifaction</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logout-e63ddf.svg"
+                                            alt="Logout" width="24" height="24">
+                                        </i><span class="ms-2">Logut</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </span>
+                </button>
+            </div>
+            <div>
+                <button class="btn  btn-block" style="border: 0px; color: black; width: 100%;"><img
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
+                        alt="Cart" class="_1XmrCc" width="24" height="24"></i><span class="ms-2">Cart</span>
+                </button>
+            </div>
+            <div>
+                <button class="btn  btn-block" style="border: 0px; color: black; width: 100%;"><img
+                        src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg"
+                        alt="Become a Seller" class="_1XmrCc"></i><span class="ms-2">Become a Seller</span>
+                </button>
+            </div>
+            <div>
+                <div class="dropdown Account1-button">
+                    <div data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="mt-2"
+                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_3verticalDots-ea7819.svg"
+                            width="24" height="24" alt="Dropdown with more help links">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/notificationPreferences-cfffaf.svg"
+                                            alt="Notifications" width="24" height="24">
+                                        </i><span class="ms-2">Notifaction Preference</span>
+                                    </div>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/helpcenter-7d90c0.svg"
+                                            alt="24x7 Customer Care" width="24" height="24">
+                                        </i><span class="ms-2">24x7 Customer care</span>
+                                    </div>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-298691.svg"
+                                            alt="Advertise" width="24" height="24">
+                                        </i><span class="ms-">Advertise</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="btn btn-block"
+                                        style="border: 0px; color: black; width: 100%; text-align: left;">
+                                        <img class="SFnind"
+                                            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/downloadApp-2ea657.svg"
+                                            alt="Download App" width="24" height="24">
+                                        </i><span class="ms-2">Download App</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rightscrool">
+        <div class="row justify-content-center gap-3  Box" style="height: 150px;">
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Grocery"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100">
+                <h6 class="mt-1 ms-2">Grocery</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb " alt="Mobiles"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100">
+                <h6 class="mt-1 ms-2">Mobiles</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Fashion"
+                    src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0d75b34f7d8fbcb3.png?q=100">
+                <div>
+                    <button class="btn btn-outline-light btn-block dropdown-toggle Account-button" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"
+                        style="border: 0px; color: black; width: 50%; text-align: left;">
+                        <span class="dropdown">
+                            Fashion
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+                                                alt="Account" class="-dOa_b L_FVxe" width="25" height="25">
+                                            </svg>
+                                            </i><span class="ms-2">My Profile</span>
+                                        </div>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/supercoin-ce8408.svg"
+                                                alt="SuperCoin Zone" width="24" height="24">
+                                            </i><span class="ms-2">SuperCoin Zone</span>
+                                        </div>
+                                    </a>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkplus-4ff29a.svg"
+                                                alt="Flipkart Plus Zone" width="24" height="24">
+                                            </i><span class="ms-2">FlipKart Plus Zone</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/orders-bfe8c4.svg"
+                                                alt="Orders" width="24" height="24">
+                                            </i><span class="ms-2">Order</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIwLjI0OUMxMiAyMC4yNDkgMi42MjUgMTQuOTk5IDIuNjI1IDguNjI0MDNDMi42MjUgNy40OTcwNSAzLjAxNTQ2IDYuNDA0ODggMy43Mjk5NiA1LjUzMzM0QzQuNDQ0NDUgNC42NjE3OSA1LjQzODg0IDQuMDY0NzIgNi41NDM5MyAzLjg0MzdDNy42NDkwMyAzLjYyMjY4IDguNzk2NTcgMy43OTEzNyA5Ljc5MTMxIDQuMzIxMDZDMTAuNzg2MSA0Ljg1MDc2IDExLjU2NjUgNS43MDg3NCAxMiA2Ljc0OTAzVjYuNzQ5MDNDMTIuNDMzNSA1LjcwODc0IDEzLjIxMzkgNC44NTA3NiAxNC4yMDg3IDQuMzIxMDZDMTUuMjAzNCAzLjc5MTM3IDE2LjM1MSAzLjYyMjY4IDE3LjQ1NjEgMy44NDM3QzE4LjU2MTIgNC4wNjQ3MiAxOS41NTU1IDQuNjYxNzkgMjAuMjcgNS41MzMzNEMyMC45ODQ1IDYuNDA0ODggMjEuMzc1IDcuNDk3MDUgMjEuMzc1IDguNjI0MDNDMjEuMzc1IDE0Ljk5OSAxMiAyMC4yNDkgMTIgMjAuMjQ5WiIgc3Ryb2tlPSIjMjEyMTIxIiBzdHJva2Utd2lkdGg9IjEuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="
+                                                alt="Wishlist (9)" width="24" height="24">
+                                            </i><span class="ms-2">Wishlist(9)</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/coupons-083172.svg"
+                                                alt="Coupons" width="24" height="24">
+                                            </i><span class="ms-2">Coupons</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/giftCard-bd87e1.svg"
+                                                alt="Gift Cards" width="24" height="24">
+                                            </i><span class="ms-2">Gift Cards</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/notificationPreferences-cfffaf.svg"
+                                                alt="Notifications" width="24" height="24">
+                                            </i><span class="ms-2">Notifaction</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <div class="btn btn-block"
+                                            style="border: 0px; color: black; width: 100%; text-align: left;">
+                                            <img class="SFnind"
+                                                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logout-e63ddf.svg"
+                                                alt="Logout" width="24" height="24">
+                                            </i><span class="ms-2">Logut</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </span>
+
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Electronics"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100">
+                <h6 class="mt-1 ms-1">Electronics</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Home &amp; Furniture"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg?q=100">
+                <h6>Home & Furniture</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Appliances"
+                    src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0139228b2f7eb413.jpg?q=100">
+                <h6 class="mt-1 ms-2">Appliances</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Travel"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100">
+                <h6 class="mt-1 ms-2">Travel</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Beauty, Toys &amp; More"
+                    src="https://rukminim1.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png?q=100">
+                <h6 class="mt-1">Beauty, Toys & More</h6>
+            </div>
+            <div class="col-md-1 mt-3">
+                <img class="_2puWtW _3a3qyb" alt="Two Wheelers"
+                    src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100">
+                <h6 class="mt-1 ms-2">Two Wheelers</h6>
+            </div>
+        </div>
+
+        <!-- carousel slide images -->
+        <div class="mt-3 Box ms-4">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                        aria-label="Slide 3"></button>
+
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/45afb8c505c9214e.jpg?q=20"
+                            loading="eager" alt="Image" style="width: 100%;">
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/1aaeb0a6531bef88.jpg?q=20"
+                            loading="eager" alt="Image" style="width: 100%;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/bdd9bb733f1c0b71.jpg?q=20"
+                            loading="eager" alt="Image" style="width: 100%;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/9384b37a848c5e60.jpg?q=20"
+                            loading="eager" alt="Image" style="width: 100%;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://rukminim1.flixcart.com/fk-p-flap/1000/170/image/9e9aa250dfecdbc3.jpg?q=20"
+                            loading="eager" alt="Image" style="width: 100%;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Best of Electronics -->
+        <div class=" row mt-3 ms-4 BOXX gap-3 justify-content-center">
+            <h5 class="mt-3 ms-4">Best of Electronics</h5>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="oneplus.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Best Truwireless Headphone</div>
+                <div class="text-center">
+                    <strong>Grab now</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="speaker2.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Best Selling Mobile speaker</div>
+                <div class="text-center">
+                    <strong>From ₹499*</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="watch.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Fastrack Smartwatches</div>
+                <div class="text-center">
+                    <strong>From ₹1,399</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="speaker.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Best Selling Mobile speaker</div>
+                <div class="text-center">
+                    <strong>From ₹499*</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="camera.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Top Mirrorless Cameras</div>
+                <div class="text-center">
+                    <strong>Shop now!</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="keyword.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Best keyword</div>
+                <div class="text-center">
+                    <strong>From ₹899*</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bauty, Food, Toys & more -->
+        <!-- <div class=" row mt-3 ms-4 mb-4 BOXX gap-3 justify-content-center SCROOL " >
+        <div class="row objectscrool">
+            <h5 class="mt-3 ms-4">Bauty, Food, Toys & more </h5>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="A.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Soft Toys</div>
+                <div class="text-center">
+                    <strong>Upto 70% Off</strong>
+                </div>
+            </div>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="B.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Geared Cycles</div>
+                <div class="text-center">
+                    <strong>Upto 70% Off</strong>
+                </div>
+            </div>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="C.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Best of Action Toys</div>
+                <div class="text-center">
+                    <strong>Upto 70% Off</strong>
+                </div>
+            </div>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="D.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Yoga Mat</div>
+                <div class="text-center">
+                    <strong>From ₹ 159*</strong>
+                </div>
+            </div>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="E.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Microphones</div>
+                <div class="text-center">
+                    <strong>Upto 70% Off</strong>
+                </div>
+            </div>
+            <div class="mt-1 BOX1 col-2" style="width: 230px;">
+                <div class="PHOTO text-center">
+                    <img src="F.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">String instruments</div>
+                <div class="text-center">
+                    <strong>Upto 70% Off</strong>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="container" class="row mt-3 ms-4 BOXX justify-content-center">
+            <div id="objects">
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center">
+                            <img src="A.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Soft Toys</div>
+                        <div class="text-center">
+                            <strong>Upto 70% Off</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-2 BOX1">
+                        <div class="PHOTO text-center">
+                            <img src="C.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Best of Action Toys</div>
+                        <div class="text-center">
+                            <strong>Upto 70% Off</strong>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center">
+                            <img src="D.png" class="w-75" style="height: 180px;" alt="">
+                        </div>
+                        <div class="text-center">Yoga Mat</div>
+                        <div class="text-center">
+                            <strong>From ₹ 159*</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center">
+                            <img src="E.png" class="w-75" style="height: 180px;" alt="">
+                        </div>
+                        <div class="text-center">Microphones</div>
+                        <div class="text-center">
+                            <strong>Upto 70% Off</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center">
+                            <img src="F.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">String instruments</div>
+                        <div class="text-center">
+                            <strong>Upto 70% Off</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class=" BOX1 mt-4">
+                        <div class="PHOTO text-center mt-2 mt-2">
+                            <img src="Bags, Trollets.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Bags, Trollets, Luggage...</div>
+                        <div class="text-center">
+                            <strong>50-70%+Extra 10% Off</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center mt-2">
+                            <img src="Sofa.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Sofa & Sectional</div>
+                        <div class="text-center">
+                            <strong>From ₹7,999</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center mt-2">
+                            <img src="Nivia.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Nivia, Van Heusen Flex</div>
+                        <div class="text-center">
+                            <strong>Up to 60% Off</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="jew.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Silver Jewellery</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="object ms-3">
+                    <div class="mt-4 BOX1">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="School Supplies.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">School Supplies</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% off</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested for you -->
+        <div class="row mt-3 ms-4 ">
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Suggested for you</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="jew.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Silver Jewellery</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="bottle.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Water Bottles & Flasks</div>
+                        <div class="text-center">
+                            <strong class="text-success">New Collections</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="glass.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Tableware & Dinnerw...</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="sunglass.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Sunglasses</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <img src="side.png" alt="" class="w-100" height="700px">
+            </div>
+
+        </div>
+
+        <div class="row mt-3 ms-4 ">
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Unlimited Entertainment</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="toys.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Toys And Games</div>
+                        <div class="text-center">
+                            <strong class="text-success">Widest Range</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="headset.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Headset</div>
+                        <div class="text-center">
+                            <strong class="text-success">Widest Range</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="speakers.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Speakers</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="projecters.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Projecters</div>
+                        <div class="text-center">
+                            <strong class="text-success">Don't Miss</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Monsoon Hair & Skincare</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="hair oil.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Hair Oil</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="skin.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Skin Brightening</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="soap.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Bath Soap</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="face wash.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Face Wash</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Gifts for ALL Occasion</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="silver jew.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Silver Jewellery</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="glass.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Tableware & Dinnerw...</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="bottle.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Water Bottles & Flasks</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="electroni cookers.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Electnic Cookers</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 ms-4 ">
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Best of Health & Welllness</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="protein.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Protein Supplement</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Biscuit.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Biscuit, Cookie And R...</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Dry.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Dry Fruit, Nut & Seed</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="bottle.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Water Bottles & Flasks</div>
+                        <div class="text-center">
+                            <strong class="text-success">Specisl offer</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Soap Student Essential</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="School Sets.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">School SetsHair Oil</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="School Supplies.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">School Supplies</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="School Bags.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">School Bags</div>
+                        <div class="text-center">
+                            <strong class="text-success">Top Collection</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Men's Sandals & Floaters.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Men's Sandals & Floats</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 50% Off</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">Fitness Gear To Stay Fit</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Women's Bras.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Women's Bras</div>
+                        <div class="text-center">
+                            <strong class="text-success">Don't Miss</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Men's Shorts.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Men's Shorts</div>
+                        <div class="text-center">
+                            <strong class="text-success">Best Deals</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Dumbbells.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Dumbbells</div>
+                        <div class="text-center">
+                            <strong class="text-success">Grab or Gone</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Home Gym.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Home Gym Combos</div>
+                        <div class="text-center">
+                            <strong class="text-success">Popular</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 ms-4 ">
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3">Mansoon-ready Style</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Women's Bras.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Women's Bras</div>
+                        <div class="text-center">
+                            <strong class="text-success">Don't Miss</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Mes's Slippers & Flip Flops.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Mes's Slippers & Flip Flops</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 70% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Men's Sandals & Floaters.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Men's Sandals & Floaters</div>
+                        <div class="text-center">
+                            <strong class="text-success">Min. 70% Off</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Kid's Apparel Combos.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Kid's Apparel Combos</div>
+                        <div class="text-center">
+                            <strong class="text-success">Specisl offer</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ">
+                    <h5 class="mt-3 ms-3">Recommended Items</h5>
+                    <div class="d-flex mb-3 mt-4">
+                        <div>
+                            <div class=" BOX1" style="width: 250px;height:550px ">
+                                <div class="PHOTO text-center mt-5" style="height: 300px;">
+                                    <img src="BenQ GV31.png" class="w-100" alt="">
+                                </div>
+                                <div class="text-center mt-2">BenQ GV31 (300 lm /2 Speaker/...</div>
+                                <div class="text-center">
+                                    <s>79,990</s><strong>₹359,990 <span class="text-success">25% off</span></strong>
+                                    <div>
+                                        <b><span class="text-success">No Cost EMI from ₹5000/month</span></b>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class=" BOX1" style="width: 230px;height:290px ">
+                                <div class="PHOTO text-center mt-3">
+                                    <img src="PLAY Freestyle.png" class="w-75" alt="">
+                                </div>
+                                <div class="text-center mt-2">PLAY Freestyle Full HD And...</div>
+                                <div class="text-center">
+                                    <s>25,000</s><strong>₹9,499 <span class="text-success">62% off</span></strong>
+                                    <div>
+                                        <b><span class="text-success">EMI from ₹466/month</span></b>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="BOX1" style="width: 230px; height:260px ;">
+                                <div class="PHOTO text-center mt-4">
+                                    <img src="BenQ MX560.png" class="w-75" alt="">
+                                    <div class="text-center mt-2">
+                                        <s>829</s><strong>₹580 <span class="text-success">40% off</span></strong>
+                                        <div>
+                                            <b><span class="text-success">No Cost EMI from ₹2916/month</span></b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 BOXX">
+                <div class=" row mt-3 ms-3 gap-2 mb-3">
+                    <h5 class="mt-3 ms-4">FOOT AND NECK-MASSAGER</h5>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Massagers.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">WMassagers</div>
+                        <div class="text-center">
+                            <strong class="text-success">New Collections</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Electric Toothbrushes.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Electric Toothbrushes</div>
+                        <div class="text-center">
+                            <strong class="text-success">Big Savings</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px; height:295px ;">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Water PuriFiers.png" class="w-75" alt="">
+                        </div>
+                        <div class="text-center">Water PuriFiers</div>
+                        <div class="text-center">
+                            <strong class="text-success">New Range</strong>
+                        </div>
+                    </div>
+                    <div class="mt-1 BOX1" style="width: 220px;height:295px ">
+                        <div class="PHOTO text-center mt-3">
+                            <img src="Surgical Gloves.png" class="w-75" style="height: 200px;" alt="">
+                        </div>
+                        <div class="text-center">Surgical Gloves</div>
+                        <div class="text-center">
+                            <strong class="text-success">Special offer</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pick Your Style -->
+        <div class=" row mt-3 ms-4 BOXX gap-3 justify-content-center">
+            <h5 class="mt-3 ms-4">Pick Your Style</h5>
+            <div class=" BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2 mt-2">
+                    <img src="Bags, Trollets.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Bags, Trollets, Luggage...</div>
+                <div class="text-center">
+                    <strong>50-70%+Extra 10% Off</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="U.S. Polo.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">U.S. Polo Assn. Highlande...</div>
+                <div class="text-center">
+                    <strong>Min. 40% Off</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Sweatshirts.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Sweatshirts, Hoodie. Jac...</div>
+                <div class="text-center">
+                    <strong>From ₹249</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Trendy Sarees.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Trendy Sarees</div>
+                <div class="text-center">
+                    <strong>Under ₹499</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Trendy Gowns.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Trendy Gowns</div>
+                <div class="text-center">
+                    <strong>Under ₹699</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Nivia.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Nivia, Van Heusen Flex</div>
+                <div class="text-center">
+                    <strong>Up to 60% Off</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Furniture Deals -->
+        <div class=" row mt-3 ms-4 BOXX gap-3 justify-content-center">
+            <h5 class="mt-3 ms-4">Furniture Deals</h5>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Mattresses.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Mattresses</div>
+                <div class="text-center">
+                    <strong>From ₹2,990</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Sofa.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Sofa & Sectional</div>
+                <div class="text-center">
+                    <strong>From ₹7,999</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Dinning srt.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Dinning set</div>
+                <div class="text-center">
+                    <strong>From ₹6,000</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Wardrobes.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Wardrobes</div>
+                <div class="text-center">
+                    <strong>From ₹4,999</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Office Study Chairs.png" class="w-75" style="height: 180px;" alt="">
+                </div>
+                <div class="text-center">Office Study Chairs</div>
+                <div class="text-center">
+                    <strong>From ₹1,890</strong>
+                </div>
+            </div>
+            <div class="mt-2 BOX1 mb-4" style="width: 230px;">
+                <div class="PHOTO text-center mt-2">
+                    <img src="Beds.png" class="w-75" alt="">
+                </div>
+                <div class="text-center">Beds</div>
+                <div class="text-center">
+                    <strong>From ₹1,790</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- You May Like -->
+        <div class="row mt-3 ms-4 mb-4 ">
+            <div class="col-md-5 BOXX">
+                <div class=" row mt-3 ms-3">
+                    <h5 class="mt-3 ms-4">You May Like</h5>
+                    <div class="d-flex mb-3">
+                        <div>
+                            <div class=" BOX1" style="width: 300px;height:550px ">
+                                <div class="PHOTO text-center mt-5" style="height: 300px;">
+                                    <img src="CREATINE.png" class="w-100 mt-5" alt="">
+                                </div>
+                                <div class="text-center mt-2">Nutrabay Gold Micronized Creatine..</div>
+                                <div class="text-center">
+                                    <s>599</s><strong>₹337 <span class="text-success">44% off</span></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class=" BOX1" style="width: 250px;height:275px ">
+                                <div class="PHOTO text-center mt-3">
+                                    <img src="CREATINE.png" class="w-75" alt="">
+                                </div>
+                                <div class="text-center mt-2">Nutrabay Gold Micronized Creatine..</div>
+                                <div class="text-center">
+                                    <s>599</s><strong>₹337 <span class="text-success">44% off</span></strong>
+                                </div>
+                            </div>
+                            <div class="BOX1" style="width: 250px; height:275px ;">
+                                <div class="PHOTO text-center mt-3">
+                                    <img src="ASITIS.png" class="w-75" alt="">
+                                </div>
+                                <div class="text-center mt-2">AS-IT-Nutrition Monohyd..</div>
+                                <div class="text-center">
+                                    <s>829</s><strong>₹580 <span class="text-success">40% off</span></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <img src="Side2.png" alt="" class="w-100" style="height: 650px;">
+            </div>
+        </div>
+        <!-- Footer -->
+        <!-- <div class="bg-dark text-light w-100 ">
+        <div class="row d-flex">
+            <div class="col-md-2 mt-5">
+                <p>ABOUT</p>
+                <a href="">Contact Us</a>
+                <a href=""></a>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </div>
+               
+            <div class="col-md-2  mt-5">
+                <p>ABOUT</p>
+                <a href="">Contact Us</a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </div>
+            <div class="col-md-2  mt-5">
+                <p>ABOUT</p>
+                <a href="">Contact Us</a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </div>
+            <div class="col-md-2  mt-5">
+                <p>ABOUT</p>
+                <a href="">Contact Us</a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </div>
+            
+            <div class="col-md-2  mt-5">
+                Mail Us:
+                <p>Flipkart Interret Private Limited, <br>
+                    Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village, <br>
+                    Outer Ring Road, Devarabeesanahalli Village, <br>
+                    Bengaluru, 560103, <br>
+                    Karnataka, India</p>
+            </div>
+            <div class="col-md-2  mt-5">
+                registered Office Address:
+                <h6>Flipkart Internet Private Limited, <br>
+                    Buildings Alyssa, Begonia & <br>
+                    Clove Embassy Tech Village, <br>
+                    Outer Ring Road, Devarabeesanahalli Village, <br>
+                    Bengaluru, 560103, <br>
+                    Karnataka, India <br>
+                    CIN: U51109KA2012PTC066107 <br>
+                    Telephone: 044-45614700/044-67415800</h6>
+            </div>
+        </div>-->
+        <div class="row bg-dark text-light FOOTER">
+            <div class="col-md-2 mt-5">
+                <div class="ms-5">
+                    <p class="text-secondary">ABOUT</p>
+                    <a href="" style="text-decoration: none;" class="text-light">Contact Us</a><br>
+                    <a href="" style="text-decoration: none;" class="text-light">About Us</a><br>
+                    <a href="" style="text-decoration: none;" class="text-light">Careers</a><br>
+                    <a href="" style="text-decoration: none;" class="text-light">Flipkart Stories</a><br>
+                    <a href="" style="text-decoration: none;" class="text-light">Press</a><br>
+                    <a href="" style="text-decoration: none;" class="text-light">Corporate information</a><br>
+                </div>
+
+            </div>
+            <div class="col-md-2  mt-5">
+                <p class="text-secondary">GROUP COMPANIES</p>
+                <a href="" style="text-decoration: none;" class="text-light">Myntra</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Cleartip</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Shopsy</a><br>
+            </div>
+            <div class="col-md-2  mt-5">
+                <p class="text-secondary">HELP</p>
+                <a href="" style="text-decoration: none;" class="text-light">Payments</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Shipping</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Cancellation & Returns</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">FAQ</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">report infringment</a><br>
+            </div>
+            <div class="col-md-2  mt-5">
+                <p class="text-secondary">CONSUMER POLICY</p>
+                <a href="" style="text-decoration: none;" class="text-light">Canellation & Returns</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Terms Of Use</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Security</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Privacy</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Sitmap</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">Grievance Redressal</a><br>
+                <a href="" style="text-decoration: none;" class="text-light">ERP Compliance</a><br>
+            </div>
+
+            <div class="col-md-2  mt-5 mb-3">
+                <p class="text-secondary">Mail Us:</p>
+                <p class="mt-3 ">Flipkart Interret Private Limited, <br>
+                    Buildings Alyssa, Begonia & Clove Embassy Tech Village,
+                    Outer Ring Road,Devarabeesanahalli Village,
+                    Bengaluru, 560103, <br>
+                    Karnataka, India
+                </p>
+                <div>
+                    <p class="text-secondary">Social:</p>
+                    <button class="btn" id="button">
+                        <a href="https://www.facebook.com/ganesh.kunwar.07/about" class="text-light"><i
+                                class="fa-brands fa-facebook fa-1x"></i>
+                        </a>
+                    </button>
+                    <button class="btn " id="button">
+                        <a href="#" class="text-light"><i class="fa-brands fa-twitter fa-1x"></i>
+                        </a>
+                    </button>
+                    <button class="btn " id="button">
+                        <a href="#" class="text-light"><i class="fa-brands fa-youtube fa-1x"></i>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2  mt-5">
+                <p class="text-secondary">Registered Office Address:</p>
+                <p class="mt-3" style="font-weight: 500; font-size: 13px;">Flipkart Internet Private Limited,
+                    Buildings Alyssa, Begonia &
+                    Clove Embassy Tech Village,
+                    Outer Ring Road, Devarabeesanahalli Village,
+                    Bengaluru, 560103,
+                    Karnataka, India
+                    CIN: U51109KA2012PTC066107
+                    Telephone: 044-45614700/044-67415800
+                <p>
+            </div>
+        </div>
+        <div class="row bg-dark text-light gap-4 LAST">
+            <hr>
+            <div class="col-md-1 ms-5">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg"
+                    alt="Become a Seller" width="15" height="15"> Become a Seller
+            </div>
+            <div class="col-md-1 ms-5">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-866c0b.svg"
+                    alt="Advertise" width="14" height="14"> Advertise
+            </div>
+            <div class="col-md-1 ">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-d7ff24.svg"
+                    alt="Gift Cards" width="13" height="13">Gift Cards
+            </div>
+            <div class="col-md-1">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-c4ace8.svg"
+                    alt="Help Center" width="13" height="13"> Help Center
+            </div>
+            <div class="col-md-2">
+                <span class="pCGSTE">© 2007-<!-- -->2024<!-- --> <span>Flipkart.com</span></span>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
+                    alt="Payment methods">
+            </div>5
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+"></script>
+
+</html>
