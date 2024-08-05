@@ -221,7 +221,7 @@
     z-index: 1;
 }
 .SECONDARY{
-    color: #4a4c50;
+    color: grey
 }
 .FLIP:hover{
     color: blue;
@@ -235,4 +235,16 @@
 .cartscrool::-webkit-scrollbar {
     display: none;
     /* for Chrome, Safari, and Opera */
+}
+.TEXT2 {
+    font-size: 14px;
+    font-weight: 700;
+}
+.BOXSH{
+
+    box-shadow: 2px 2px 5px gray
+}
+.TEXT3 {
+    font-size: 12px;
+    font-weight: 500;
 }
